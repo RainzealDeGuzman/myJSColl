@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Grade Converter</title>
+		<link href="property.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="container">
+			<h2>GRADE CONVERTER</h2>
+			<br/>
+			<br/>
+			<label for="correct">NUMBER OF CORRECT ITEMS</label>
+			<br/>
+			<br/>
+			<input type="number" id="correct"/>
+			<br/>
+			<br/>
+			<label for="items">TOTAL NUMBER OF ITEMS</label>
+			<br/>
+			<br/>
+			<input type="number" id="items"/>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="gradeConv()">COMPUTE</button>
+			<br/>
+			<br/>
+			<h3 id="result"></h3>
+			<br/>
+			<br/>
+			<a href="index.html" class="back">BACK TO MAIN MENU</a>
+			<script>
+				function gradeConv() {
+					var numOfCorrect = parseInt(document.getElementById("correct").value);
+					var numOfItems = parseInt(document.getElementById("items").value);
+
+					if (isNaN(numOfCorrect) || isNaN(numOfItems) || numOfCorrect <= 0 || numOfItems <= 0 || numOfCorrect > numOfItems || numOfCorrect > 100 || numOfItems > 100)
+					{
+						alert("Invalid input/s. Please enter valid value/s.");
+						return;
+					}
+
+					var egrade = (numOfCorrect / numOfItems) * 60 + 40;
+					var message = "";
+
+					if (egrade >= 75 && egrade <= 80)
+					{
+						message = "NOT BAD";
+					}
+					else if (egrade >= 81 && egrade <= 85)
+					{
+						message = "GOOD";
+					}
+					else if (egrade >= 86 && egrade <= 90)
+					{
+						message = "VERY GOOD";
+					}
+					else if (egrade >= 91 && egrade <= 95)
+					{
+						message = "MAY FUTURE KA";
+					}
+					else if (egrade >= 96 && egrade <= 100)
+					{
+						message = "PWEDE NA MAG ASAWA";
+					}
+					else 
+					{
+						message = "SORRY, KULANG PA SA EFFORT...";
+					}
+
+					document.getElementById("result").innerHTML = "EQUIVALENT GRADE: " + egrade.toFixed(2) + "<br/>" + "MESSAGE: " + message;
+				}
+			</script>
+		</div>
+	</body>
+</html>

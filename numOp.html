@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Number Operation</title>
+		<link rel="stylesheet" href="property.css"/>
+    </head>
+    <body>
+		<div class="container">
+			<h2>NUMBER OPERATION</h2>
+			<br/>
+			<br/>
+			<label for="num1">ENTER 1ST NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num1" value="0"/>
+			<br/>
+			<br/>
+			<label for="num2">ENTER 2ND NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num2" value="0"/>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="numOp()">PERFORM NUMBER OPERATION</button>
+			<br/>
+			<br/>
+			<h3 id="result">ANSWER: </h3>
+			<br/>
+			<br/>
+			<a href="index.html" class="back">BACK TO MAIN MENU</a>
+			<script>
+				function numOp()
+				{
+					var num1 = parseFloat(document.getElementById("num1").value) || 0;
+					var num2 = parseFloat(document.getElementById("num2").value) || 0;
+					var answer;
+
+					if (num1 == num2)
+					{
+						answer = num1 - num2;
+						document.getElementById("result").innerHTML = + answer;
+						document.getElementById("result").style.color = "red";
+					}
+					else if (num1 > num2)
+					{
+						answer = num1 + num2;
+						document.getElementById("result").innerHTML = + answer;
+						document.getElementById("result").style.color = "yellow";
+					}
+					else
+					{					
+						answer = num1 * num2;
+						document.getElementById("result").innerHTML = + answer;
+						document.getElementById("result").style.color = "#1fd655";
+					}
+				}
+			</script>
+		</div>
+    </body>
+</html>

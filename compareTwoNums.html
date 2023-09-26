@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Comparing Two Numbers</title>
+		<link rel="stylesheet" href="property.css"/>
+    </head>
+    <body>
+		<div class="container">
+			<h2>COMPARING TWO NUMBERS</h2>
+			<br/>
+			<br/>
+			<label for="num1">ENTER 1ST NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num1" value="0"/>
+			<br/>
+			<br/>
+			<label for="num2">ENTER 2ND NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num2" value="0"/>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="compareTwoNums()">COMPARE</button>
+			<br/>
+			<br/>
+			<h3 id="result">1ST _ 2ND</h3>
+			<br/>
+			<br/>
+			<a href="index.html" class="back">BACK TO MAIN MENU</a>
+			<script>
+				function compareTwoNums()
+				{
+					var A = parseFloat(document.getElementById("num1").value) || 0;
+					var B = parseFloat(document.getElementById("num2").value) || 0;
+					if (A > B)
+					{
+						document.getElementById("result").innerHTML = '1ST > 2ND';
+					}
+					else if (A < B)
+					{
+						document.getElementById("result").innerHTML = '1ST < 2ND';
+					}
+					else
+					{
+						document.getElementById("result").innerHTML = '1ST = 2ND';
+					}
+				}
+			</script>
+		</div>
+    </body>
+</html>

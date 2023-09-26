@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voting Eligibility Checker</title>
+		<link rel="stylesheet" href="property.css"/>
+    </head>
+    <body>
+		<div class="container">
+			<h2>VOTING ELIGIBILITY CHECKER</h1>
+			<br/>
+			<br/>
+			<label for="name">ENTER NAME:</label>
+			<br/>
+			<br/>
+			<input type="text" id="name"/>
+			<br/>
+			<br/>
+			<label for="age">ENTER AGE:</label>
+			<br/>
+			<br/>
+			<input type="number" id="age" value="0"/>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="voteCheck()">CHECK ELIGIBILITY</button>
+			<br/>
+			<br/>
+			<h3 id="result"></h3>
+			<br/>
+			<br/>
+			<a href="index.html" class="back">BACK TO MAIN MENU</a>
+			<script>
+				function voteCheck()
+				{
+					var name = document.getElementById("name").value;
+					var age = parseInt(document.getElementById("age").value);
+					
+					if (name.trim() === "" && isNaN(age))
+					{
+						alert("Please enter a valid name and age.");
+						return;
+					}
+					else if (name.trim() === "")
+					{
+						alert("Please enter a valid name.");
+						return;
+					}
+					else if (isNaN(age))
+					{
+						alert("Please enter a valid age.");
+						return;
+					}
+					else if (age >= 131 || age < 0)
+					{
+						alert("Please enter a valid age.");
+						return;
+					}					
+					
+					if (age >= 18)
+					{
+						document.getElementById("result").innerHTML = name + ", you are allowed to vote.";
+					}
+					else
+					{
+						document.getElementById("result").innerHTML = name + ", you are not allowed to vote.";
+					}
+				}
+			</script>
+		</div>
+    </body>
+</html>

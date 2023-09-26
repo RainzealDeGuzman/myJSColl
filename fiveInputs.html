@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Five Inputs</title>
+		<link rel="stylesheet" href="property.css"/>
+    </head>
+    <body>
+		<div class="container">
+			<h2>FIVE INPUTS</h2>
+			<br/>
+			<br/>
+			<label for="num1"> ENTER FIRST NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num1" value="0"/>
+			<br/>
+			<br/>
+			<label for="num2"> ENTER SECOND NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num2" value="0"/>
+			<br/>
+			<br/>
+			<label for="num3"> ENTER THIRD NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num3" value="0"/>
+			<br/>
+			<br/>
+			<label for="num4"> ENTER FOURTH NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num4" value="0"/>
+			<br/>
+			<br/>
+			<label for="num5"> ENTER FIFTH NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num5" value="0"/>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="fiveInputs()">CHECK</button>
+			<br/>
+			<br/>
+			<h3>REMARK: <span id="remark"></span></h3>
+			<br/>
+			<br/>
+			<a href="index.html" class="back">BACK TO MAIN MENU</a>
+			<script>
+				function fiveInputs()
+				{
+					var A = parseFloat(document.getElementById("num1").value) || 0;
+					var B = parseFloat(document.getElementById("num2").value) || 0;
+					var C = parseFloat(document.getElementById("num3").value) || 0;
+					var D = parseFloat(document.getElementById("num4").value) || 0;
+					var E = parseFloat(document.getElementById("num5").value) || 0;
+					if (C > A)
+					{
+						var act1 = A * B * C * D * E
+						document.getElementById("remark").innerHTML = + act1;
+						document.getElementById("remark").style.color = "red";
+					}
+					else if (A > B)
+					{
+						var act2 = D * E
+						document.getElementById("remark").innerHTML = + act2;
+						document.getElementById("remark").style.color = "yellow";
+					}
+					else
+					{						
+						document.getElementById("remark").innerHTML = "BYE";
+						document.getElementById("remark").style.color = "#1fd655" ;
+					}
+				}
+			</script>
+		</div>
+    </body>
+</html>

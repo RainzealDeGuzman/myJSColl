@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Even or Odd?</title>
+		<link rel="stylesheet" href="property.css"/>
+    </head>
+    <body>
+		<div class="container">
+			<h2>EVEN OR ODD?</h2>
+			<br/>
+			<br/>
+			<label for="num">ENTER A NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num" value="0"/>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="checkParity()">CHECK</button>
+			<br/>
+			<br/>
+			<h3 id="result"></h3>
+			<br/>
+			<br/>
+			<a href="index.html" class="back">BACK TO MAIN MENU</a>
+			<script>
+				function checkParity()
+				{
+					var num = parseInt(document.getElementById("num").value) || 0;
+
+					if (num % 2 == 0)
+					{
+						document.getElementById("result").innerHTML = num + " IS EVEN.";
+					}
+					else
+					{
+						document.getElementById("result").innerHTML = num + " IS ODD.";
+					}
+				}
+			</script>
+		</div>
+    </body>
+</html>

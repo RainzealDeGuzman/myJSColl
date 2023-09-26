@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Addition of Two Numbers</title>
+		<link rel="stylesheet" href="property.css"/>
+    </head>
+    <body>
+		<div class="container">
+			<h2>ADDITION OF TWO NUMBERS</h2>
+			<br/>
+			<br/>
+			<label for="num1">ENTER 1ST NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num1" value="0"/>
+			<br/>
+			<br/>
+			<label for="num2">ENTER 2ND NUMBER</label>
+			<br/>
+			<br/>
+			<input type="number" id="num2" value="0"/>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="addTwoNums()">COMPUTE</button>
+			<br/>
+			<br/>
+			<h3 id="result">THE RESULT IS: </h3>
+			<br/>
+			<br/>
+			<a href="index.html" class="back">BACK TO MAIN MENU</a>
+			<script>
+				function addTwoNums()
+				{
+					document.getElementById("result").innerHTML = "THE RESULT IS: ";			
+					var A = parseFloat(document.getElementById("num1").value) || 0;
+					var B = parseFloat(document.getElementById("num2").value) || 0;
+					var sum = A+B;
+					document.getElementById("result").innerHTML += + sum;
+				}
+			</script>
+		</div>
+    </body>
+</html>

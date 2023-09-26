@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Average of 4 Quizzes</title>
+		<link rel="stylesheet" href="property.css"/>
+    </head>
+    <body>
+		<div class="container">
+			<h2>AVERAGE OF 4 QUIZZES</h2>
+			<br/>
+			<br/>
+			<label for="q1"> ENTER QUIZ #1</label>
+			<br/>
+			<br/>
+			<input type="number" id="q1" value="0"/>
+			<br/>
+			<br/>
+			<label for="q2"> ENTER QUIZ #2</label>
+			<br/>
+			<br/>
+			<input type="number" id="q2" value="0"/>
+			<br/>
+			<br/>
+			<label for="q3"> ENTER QUIZ #3</label>
+			<br/>
+			<br/>
+			<input type="number" id="q3" value="0"/>
+			<br/>
+			<br/>
+			<label for="q4"> ENTER QUIZ #4</label>
+			<br/>
+			<br/>
+			<input type="number" id="q4" value="0"/>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="averageQuiz()">COMPUTE</button>
+			<br/>
+			<br/>
+			<h3 id="average">THE AVERAGE IS: </h3>
+			<h3 id="status">AVERAGE STATUS: </h3>
+			<br/>
+			<br/>
+			<a href="index.html" class="back">BACK TO MAIN MENU</a>
+			<script>
+				function averageQuiz()
+				{
+					document.getElementById("average").innerHTML = "THE AVERAGE IS: ";
+					document.getElementById("status").innerHTML = "AVERAGE STATUS: ";
+										
+					var A = parseFloat(document.getElementById("q1").value);
+					var B = parseFloat(document.getElementById("q2").value);
+					var C = parseFloat(document.getElementById("q3").value);
+					var D = parseFloat(document.getElementById("q4").value);
+					var ave = (A+B+C+D)/4;
+					
+					if (A >= 101 || B >= 101 || C >= 101 || D >= 101)
+					{
+						alert("Please enter a valid quiz score.");
+						return;
+					}
+					else if (isNaN(A, B, C, D))
+					{
+						alert("Please enter a valid quiz score.");
+						return;
+					}
+					else if (ave >= 75)
+					{
+						document.getElementById("average").innerHTML += + ave;
+						document.getElementById("status").innerHTML += "PASSED";
+					}
+					else
+					{
+						document.getElementById("average").innerHTML += + ave;
+						document.getElementById("status").innerHTML += "FAILED";
+					}
+				}
+			</script>
+		</div>
+    </body>
+</html>
